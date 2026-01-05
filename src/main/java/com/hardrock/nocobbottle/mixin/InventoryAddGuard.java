@@ -37,7 +37,6 @@ public abstract class InventoryAddGuard {
         }));
     }
 
-    // add(ItemStack) -> boolean
     @Inject(
             method = "add(Lnet/minecraft/world/item/ItemStack;)Z",
             at = @At("HEAD"),
@@ -45,15 +44,12 @@ public abstract class InventoryAddGuard {
     )
     private void nocobblebottle$blockAdd1(ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
         if (stack != null && stack.is(Items.GLASS_BOTTLE) && fromCobblemonStack()) {
-            // Rest vollständig vernichten, damit nichts gedroppt werden kann
             stack.shrink(stack.getCount());
-            // „erfolgreich hinzugefügt“ signalisieren, aber NICHT wirklich einfügen
             cir.setReturnValue(true);
             cir.cancel();
         }
     }
 
-    // add(int, ItemStack) -> boolean
     @Inject(
             method = "add(ILnet/minecraft/world/item/ItemStack;)Z",
             at = @At("HEAD"),
@@ -66,4 +62,5 @@ public abstract class InventoryAddGuard {
             cir.cancel();
         }
     }
+
 }
