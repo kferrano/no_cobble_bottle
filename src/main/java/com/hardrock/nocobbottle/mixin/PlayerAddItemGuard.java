@@ -23,7 +23,6 @@ public abstract class PlayerAddItemGuard {
     private static final StackWalker SW =
             StackWalker.getInstance(StackWalker.Option.RETAIN_CLASS_REFERENCE);
 
-    // breiter fassen: Cobblemon ruft u. U. aus mehreren Paketen
     private static final String[] COBBLE_PREFIXES = {
             "com.cobblemon.mod.common.item.medicine",
             "com.cobblemon.mod.common.item",
@@ -33,9 +32,7 @@ public abstract class PlayerAddItemGuard {
     @Inject(method = "addItem(Lnet/minecraft/world/item/ItemStack;)Z", at = @At("HEAD"), cancellable = true)
     private void nocobblebottle$blockCobblemonBottle(ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
         if (stack != null && stack.is(Items.GLASS_BOTTLE) && isFromCobblemonStack()) {
-            // Rest vollständig vernichten, damit nichts gedroppt werden kann
             stack.shrink(stack.getCount());
-            // Erfolg signalisieren, ohne wirklich einzufügen -> kein Drop/kein Aufblitzen
             cir.setReturnValue(true);
             cir.cancel();
         }
@@ -50,4 +47,5 @@ public abstract class PlayerAddItemGuard {
                 })
         );
     }
+
 }
