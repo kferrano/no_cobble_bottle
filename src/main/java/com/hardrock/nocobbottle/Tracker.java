@@ -19,7 +19,7 @@ public class Tracker {
     private static final ResourceLocation GLASS_BOTTLE_ID =
             ResourceLocation.fromNamespaceAndPath("minecraft", "glass_bottle");
 
-    private static final List<ResourceLocation> HEAL_ITEMS = List.of(
+    private static final List<ResourceLocation> BLOCKED_BOTTLE_RETURN_ITEMS = List.of(
             ResourceLocation.fromNamespaceAndPath("cobblemon", "potion"),
             ResourceLocation.fromNamespaceAndPath("cobblemon", "super_potion"),
             ResourceLocation.fromNamespaceAndPath("cobblemon", "hyper_potion"),
@@ -46,7 +46,7 @@ public class Tracker {
         int bottlesNow = count(p, GLASS_BOTTLE_ID);
 
         boolean healUsed = false;
-        for (ResourceLocation rl : HEAL_ITEMS) {
+        for (ResourceLocation rl : BLOCKED_BOTTLE_RETURN_ITEMS) {
             int now = count(p, rl);
             int before = s.lastHealCounts.getOrDefault(rl, 0);
             if (now < before) healUsed = true;
@@ -71,7 +71,7 @@ public class Tracker {
     private State initState(Player p) {
         State s = new State();
         s.lastBottles = count(p, GLASS_BOTTLE_ID);
-        for (ResourceLocation rl : HEAL_ITEMS) {
+        for (ResourceLocation rl : BLOCKED_BOTTLE_RETURN_ITEMS) {
             s.lastHealCounts.put(rl, count(p, rl));
         }
         return s;
