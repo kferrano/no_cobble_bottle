@@ -1,12 +1,12 @@
-# No Cobblemon Bottle Return (Forge 1.20.1)
+# No Cobblemon Bottle Return (NeoForge 1.21.1)
 
 Stops Cobblemon from returning an empty **Glass Bottle** when using medicine via the Cobblemon UI.  
 Prevents the add entirely → no hotbar flicker. Other bottles (brewing/loot/crafting) are unaffected.
 
 ## Requirements
-- Minecraft **1.20.1**
-- Forge **47.x**
-- Cobblemon **1.5.2** (1.20.1)
+- Minecraft **1.21.1**
+- NeoForge **21.x**
+- Cobblemon **1.7.3** (1.21.1)
 
 ## Install
 Drop the JAR into `mods/` (server and/or client). Launch.
@@ -17,8 +17,8 @@ Drop the JAR into `mods/` (server and/or client). Launch.
 
 ## Compatibility
 - Loader: Forge
-- Game: 1.20.1
-- Cobblemon: 1.5.2
+- Game: 1.21.1
+- Cobblemon: 1.7.3
 - Works alongside other mods. If a heavily modified Cobblemon fork changes the call path, open an issue.
 
 ## Config
