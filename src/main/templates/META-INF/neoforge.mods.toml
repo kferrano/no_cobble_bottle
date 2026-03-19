@@ -27,3 +27,10 @@ mandatory = true
 versionRange = "${minecraft_version_range}"
 ordering = "NONE"
 
+[[dependencies."${mod_id}"]]
+modId = "cobblemon"
+type = "required"
+mandatory = true
+versionRange = "${cobblemon_version_range}"
+ordering = "NONE"
+
