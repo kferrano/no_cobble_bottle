@@ -27,8 +27,15 @@ public class Tracker {
             ResourceLocation.fromNamespaceAndPath("cobblemon", "full_restore"),
             ResourceLocation.fromNamespaceAndPath("cobblemon", "full_heal"),
             ResourceLocation.fromNamespaceAndPath("cobblemon", "antidote"),
+            ResourceLocation.fromNamespaceAndPath("cobblemon", "antidote"),
+            ResourceLocation.fromNamespaceAndPath("cobblemon", "awakening"),
+            ResourceLocation.fromNamespaceAndPath("cobblemon", "burn_heal"),
+            ResourceLocation.fromNamespaceAndPath("cobblemon", "ice_heal"),
+            ResourceLocation.fromNamespaceAndPath("cobblemon", "paralyze_heal"),
             ResourceLocation.fromNamespaceAndPath("cobblemon", "ether"),
-            ResourceLocation.fromNamespaceAndPath("cobblemon", "elixir")
+            ResourceLocation.fromNamespaceAndPath("cobblemon", "max_ether"),
+            ResourceLocation.fromNamespaceAndPath("cobblemon", "elixir"),
+            ResourceLocation.fromNamespaceAndPath("cobblemon", "max_elixir")
     );
 
     private static class State {
