@@ -6,7 +6,7 @@ Prevents the add entirely → no hotbar flicker. Other bottles (brewing/loot/cra
 ## Requirements
 - Minecraft **1.21.1**
 - NeoForge **21.x**
-- Cobblemon **1.7.3** (1.21.1)
+- Cobblemon **1.8.4** (1.21.1)
 
 ## Install
 Drop the JAR into `mods/` (server and/or client). Launch.
